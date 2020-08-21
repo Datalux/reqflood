@@ -10,10 +10,10 @@ time = 0
 _url = ""
 
 parser = argparse.ArgumentParser(description="./main.py -u [url]")
-parser.add_argument("-u", help="HTTP requests to flood", action="store", dest="url")
-parser.add_argument("-d", help="Delay (in seconds) between requests", action="store", dest="time", type=int)
-parser.add_argument("-l", help="Send only passed number requests", action="store", dest="limit", type=int)
+parser.add_argument('-u', '--url',  help="HTTP requests to flood", action="store", dest="url")
 parser.add_argument('-P', '--post', help="Send POST request (default is GET)", action="store_true")
+parser.add_argument('-d', '--delay', help="Delay (in seconds) between requests", action="store", dest="time", type=int)
+parser.add_argument('-l', '--limit', help="Send only passed number requests", action="store", dest="limit", type=int)
 
 args = parser.parse_args()
 
