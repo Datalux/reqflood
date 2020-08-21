@@ -3,7 +3,7 @@
 An HTTP requests flooder made in Python.
 
 <p align="center">
-<img align="center" src=".img/img.png" width="600">
+<img align="center" src=".img/img.png">
 </p>
 
 ## Features
